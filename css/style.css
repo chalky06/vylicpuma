@@ -1,6 +1,6 @@
 body {
     background-color: #0b0b0b;       /* dark terminal background */
-    color: #FFD700;                  /* gold text for Caius style */
+    color: #f8e208;                  /* gold text for Caius style */
     font-family: "Times New Roman", serif; /* old-school classic font */
     font-size: 16px;
     text-align: center;
@@ -13,7 +13,6 @@ h1 {
     letter-spacing: 1px;
     margin-bottom: 20px;
     font-style: italic;              /* matches "The Virtual Caian" title style */
-    text-shadow: 0 0 3px #FFD700;   /* subtle gold glow */
 }
 
 p {
@@ -22,8 +21,8 @@ p {
 
 input[type="text"] {
     background-color: #0b0b0b;
-    color: #FFD700;
-    border: 1px solid #FFD700;
+    color: #f8e208;
+    border: 1px solid #85b09a;
     font-family: "Courier New", monospace; /* pixelated terminal input font */
     font-size: 16px;
     padding: 5px;
@@ -33,7 +32,7 @@ input[type="text"] {
 
 button {
     background-color: #FFD700;
-    color: #0b0b0b;
+    color: #85b09a;
     border: none;
     font-family: "Courier New", monospace;
     font-size: 16px;
@@ -43,7 +42,7 @@ button {
 }
 
 button:hover {
-    background-color: #e6c200;       /* slightly darker gold on hover */
+    background-color: #f8e208;       /* slightly darker gold on hover */
 }
 
 #feedback {
@@ -55,5 +54,5 @@ button:hover {
     width: 320px;                     /* primitive fixed-width layout */
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #FFD700;        /* gold border for old-school box */
+    border: 1px solid #f8e208;        /* gold border for old-school box */
 }
