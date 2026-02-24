@@ -21,8 +21,8 @@ p {
 }
 
 input[type="text"] {
-    background-color: #85b09a;
-    color: #f8e208;
+    background-color: #010001;
+    color: #de1c42;
     border: 1px solid #f8e208;
     font-family: "Courier New", monospace; /* pixelated terminal input font */
     font-size: 16px;
@@ -33,7 +33,7 @@ input[type="text"] {
 
 button {
     background-color: #85b09a;
-    color: #010001;
+    color: #188d45;
     border: 1px solid #f8e208;
     font-family: "Courier New", monospace;
     font-size: 16px;
@@ -43,7 +43,9 @@ button {
 }
 
 button:hover {
-    background-color: #de1c42;     
+    background-color: #f8e208;
+    color: #de1c42;
+    border: 1px solid #f8e208;
 }
 
 #feedback {
