@@ -2,7 +2,7 @@ function checkCode() {
     const input = document.getElementById('userInput').value.toLowerCase();
     const feedback = document.getElementById('feedback');
 
-    const secretCode = "gargoyles1348";
+    const secretCode = "gargoyle1348";
 
     if(input === secretCode) {
         // Redirect to Puzzle 1
