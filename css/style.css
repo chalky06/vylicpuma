@@ -33,7 +33,7 @@ input[type="text"] {
 button {
     background-color: #85b09a;
     color: #85b09a;
-    border: none;
+    border: 1px solid #f8e208;
     font-family: "Courier New", monospace;
     font-size: 16px;
     padding: 5px 10px;
