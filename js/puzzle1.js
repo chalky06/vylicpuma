@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (correct) {
-            feedback.textContent = "Correct! Level unlocked.";
+            feedback.textContent = "Correct";
             feedback.style.color = "#188d45";
         } else {
-            feedback.textContent = "Incorrect. Try again.";
+            feedback.textContent = "Incorrect";
             feedback.style.color = "#de1c42";
         }
     });
