@@ -4,13 +4,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitBtn = document.getElementById("submitBtn");
     const feedback = document.getElementById("feedback");
 
-    // Example correct pattern (diagonal line)
-    const correctPattern = [];
-    for (let i = 0; i < 10; i++) {
-        correctPattern.push(i * 10 + i);
-    }
+    // 👇 DEFINE YOUR PATTERN HERE
+    const pattern = [
+        "1110000000",
+        "1010000000",
+        "1110000000",
+        "0000000000",
+        "0000000000",
+        "0000000000",
+        "0000000000",
+        "0000000000",
+        "0000000000",
+        "0000000000"
+    ];
 
-    // Create 100 tiles
+    // Convert pattern into index list
+    const correctPattern = [];
+    pattern.forEach((row, rowIndex) => {
+        row.split("").forEach((cell, colIndex) => {
+            if (cell === "1") {
+                correctPattern.push(rowIndex * 10 + colIndex);
+            }
+        });
+    });
+
+    // Create grid
     for (let i = 0; i < 100; i++) {
         const tile = document.createElement("div");
         tile.classList.add("tile");
