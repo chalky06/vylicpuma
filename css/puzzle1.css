@@ -2,20 +2,15 @@ body {
     background-color: #010001;
     color: #f8e208;
     font-family: "Times New Roman", serif;
-    font-size: 16px;
     text-align: center;
     margin: 0;
     padding: 50px 0;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
 .container {
-    width: 400px;
+    position: relative;
+    z-index: 1;
+    width: 360px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #f8e208;
@@ -26,24 +21,23 @@ h1 {
     display: grid;
     grid-template-columns: repeat(10, 30px);
     grid-template-rows: repeat(10, 30px);
-    gap: 3px;
+    gap: 2px;
     margin: 20px auto;
 }
 
 .tile {
     width: 30px;
     height: 30px;
-    background-color: #188d45;
-    cursor: pointer;
+    background-color: #010001;
     border: 1px solid #f8e208;
-    transition: background-color 0.2s;
+    cursor: pointer;
 }
 
 .tile.active {
-    background-color: #de1c42;
+    background-color: #188d45;
 }
 
-#submitBtn {
+button {
     background-color: #188d45;
     color: #f8e208;
     border: 1px solid #f8e208;
@@ -54,7 +48,7 @@ h1 {
     margin-top: 10px;
 }
 
-#submitBtn:hover {
+button:hover {
     background-color: #de1c42;
     color: #f8e208;
 }
