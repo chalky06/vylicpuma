@@ -1,24 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+function checkCode() {
+    const input = document.getElementById('userInput').value.toLowerCase();
+    const feedback = document.getElementById('feedback');
 
-  const form = document.getElementById("loginForm");
-  const message = document.getElementById("message");
+    // Set your secret password here
+    const secretCode = "gargoyles1348";
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const input = document.getElementById("password").value.trim();
-
-    if (input.toUpperCase() === "CAIUS") {
-      message.style.color = "#00ff66";
-      message.textContent = "ACCESS GRANTED...";
-      setTimeout(() => {
-        window.location.href = "puzzles/puzzle1.html";
-      }, 1500);
+    if(input === secretCode) {
+        feedback.textContent = "✅ Correct! Welcome to the Vylic Puma Files!";
     } else {
-      message.style.color = "#ff0033";
-      message.textContent = "ACCESS DENIED. INCIDENT LOGGED.";
+        feedback.textContent = "❌ Incorrect. Try again!";
     }
-
-  });
-
-});
+}
