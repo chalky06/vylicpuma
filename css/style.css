@@ -1,21 +1,17 @@
+.text-bg {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    color: #85b09a;             /* muted teal text */
+    color: #85b09a;             
     font-family: "Courier New", monospace;
     font-size: 14px;
     line-height: 1.2;
-    overflow: hidden;
+    overflow: auto;      /* so you can scroll if text is huge */
     z-index: 0;
-    /* Remove background-color so text shows through */
-}
-
-.text-bg::before {
-    content: "tfcmrglezxnqkyisduawhobpcffgfexsuovqnoxyrccfbtuorugkihbyewnqsxacmdtlyrnxukwhzranoyqmcdgxlirsuweynaztorqhxdcmlguifopqgsjvmjkwnryxacoqsmhspvoexruoyzaqcmnwdsyrghtxluisvncmfeeywrnocxqlyatshzrdguiboeqcmnwarxyosludhtgzkisbut crynoaqmwxluzthsdkyxig tqsvohraxoycdqnmwzulsthgipvurmnoycaxqzutsdhlkigcfuxfforanoqxcywzdutslhkgmuifonaqrycxwzutlshkgmddsbdltcyrnoaqwxzydutslhkgmiefkhsxkjsopshipjfxhjhskkejoldgosfcskfjosocpxqrnowkgejscetq"; /* your string */
-    display: block;             /* needed for pseudo-element to appear */
-    white-space: pre-wrap;      /* wrap long lines */
-    padding: 20px;              /* spacing from edges */
+    padding: 20px;
+    white-space: pre-wrap; /* wrap the text */
 }
 
 body {
