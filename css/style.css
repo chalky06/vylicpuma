@@ -4,14 +4,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: #85b09a;             
+    color: #f8e208;             /* gold text */
     font-family: "Courier New", monospace;
-    font-size: 14px;
-    line-height: 1.2;
-    overflow: auto;      /* so you can scroll if text is huge */
+    font-size: 12px;             /* smaller so more text fits */
+    line-height: 1;              /* tight line spacing */
+    overflow: hidden;            /* no scrolling */
     z-index: 0;
-    padding: 20px;
-    white-space: pre-wrap; /* wrap the text */
+    padding: 10px;               /* small padding */
+    white-space: pre-wrap;       /* wrap long lines */
 }
 
 body {
