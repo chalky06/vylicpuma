@@ -2,11 +2,11 @@ function checkCode() {
     const input = document.getElementById('userInput').value.toLowerCase();
     const feedback = document.getElementById('feedback');
 
-    // Set your secret password here
     const secretCode = "gargoyles1348";
 
     if(input === secretCode) {
-        feedback.textContent = "✅ Correct! Welcome to the Vylic Puma Files!";
+        // Redirect to Puzzle 1
+        window.location.href = "puzzles/puzzle1.html";
     } else {
         feedback.textContent = "❌ Incorrect. Try again!";
     }
