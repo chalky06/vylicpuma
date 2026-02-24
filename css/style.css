@@ -4,14 +4,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: #f8e208;             /* gold text */
+    color: #f8e208;              /* gold letters */
     font-family: "Courier New", monospace;
-    font-size: 12px;             /* smaller so more text fits */
-    line-height: 1;              /* tight line spacing */
-    overflow: hidden;            /* no scrolling */
+    font-size: 11px;              /* smaller font to fit more text */
+    line-height: 0.9;             /* tighter vertical spacing */
+    letter-spacing: 0;            /* remove extra horizontal spacing */
+    white-space: pre-wrap;        /* wrap long lines */
+    word-wrap: break-word;        /* force wrapping inside words if needed */
+    overflow: hidden;             /* prevent scrolling */
     z-index: 0;
-    padding: 10px;               /* small padding */
-    white-space: pre-wrap;       /* wrap long lines */
+    padding: 5px;                 /* minimal padding */
 }
 
 body {
