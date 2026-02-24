@@ -1,6 +1,6 @@
 body {
     background-color: black;          /* classic terminal background */
-    color: #FFD700;                   /* bright gold text */
+    color: #ffffff;                   /* bright gold text */
     font-family: monospace;           /* pixelated look */
     font-size: 16px;                  /* readable old-school size */
     text-align: center;               /* single column layout */
@@ -9,10 +9,9 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 2px;              /* slightly spaced letters */
     margin-bottom: 20px;
-    text-shadow: 0 0 2px #FFD700;    /* subtle glow */
 }
 
 p {
@@ -21,8 +20,8 @@ p {
 
 input[type="text"] {
     background-color: black;
-    color: #00FF00;
-    border: 1px solid #00FF00;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     font-family: monospace;
     font-size: 16px;
     padding: 5px;
@@ -31,7 +30,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #00FF00;
+    background-color: #ffffff;
     color: black;
     border: none;
     font-family: monospace;
@@ -42,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: #e6c200;    
+    background-color: #010001;    
 }
 
 #feedback {
@@ -54,5 +53,5 @@ button:hover {
     width: 300px;                     /* primitive fixed-width layout */
     margin: 0 auto;                   /* center on page */
     padding: 20px;
-    border: 1px solid #00FF00;        /* old-school bordered box */
+    border: 1px solid #ffffff;        /* old-school bordered box */
 }
