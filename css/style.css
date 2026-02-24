@@ -1,7 +1,7 @@
 body {
-    background-color: #0b0b0b;       /* dark terminal background */
-    color: #f8e208;                  /* gold text for Caius style */
-    font-family: "Times New Roman", serif; /* old-school classic font */
+    background-color: #010001;  
+    color: #f8e208;     
+    font-family: "Times New Roman", serif; 
     font-size: 16px;
     text-align: center;
     margin: 0;
@@ -20,9 +20,9 @@ p {
 }
 
 input[type="text"] {
-    background-color: #0b0b0b;
+    background-color: #010001;
     color: #f8e208;
-    border: 1px solid #85b09a;
+    border: 1px solid #f8e208;
     font-family: "Courier New", monospace; /* pixelated terminal input font */
     font-size: 16px;
     padding: 5px;
@@ -31,7 +31,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #FFD700;
+    background-color: #85b09a;
     color: #85b09a;
     border: none;
     font-family: "Courier New", monospace;
@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background-color: #f8e208;       /* slightly darker gold on hover */
+    background-color: #de1c42;     
 }
 
 #feedback {
