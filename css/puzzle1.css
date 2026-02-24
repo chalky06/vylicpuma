@@ -1,35 +1,37 @@
 body {
+    margin: 0;
+    padding: 40px 0;
     background-color: #010001;
     color: #f8e208;
     font-family: "Times New Roman", serif;
     text-align: center;
-    margin: 0;
-    padding: 50px 0;
 }
 
 .container {
-    position: relative;
-    z-index: 1;
-    width: 360px;
+    width: 90%;
+    max-width: 420px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #f8e208;
     background-color: #010001;
 }
 
+h1 {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 30px);
-    grid-template-rows: repeat(10, 30px);
-    gap: 2px;
-    margin: 20px auto;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    margin: 20px 0;
 }
 
 .tile {
-    width: 30px;
-    height: 30px;
-    background-color: #010001;
+    aspect-ratio: 1 / 1;
     border: 1px solid #f8e208;
+    background-color: #010001;
     cursor: pointer;
 }
 
@@ -41,19 +43,16 @@ button {
     background-color: #188d45;
     color: #f8e208;
     border: 1px solid #f8e208;
+    padding: 8px 14px;
     font-family: "Courier New", monospace;
-    font-size: 16px;
-    padding: 5px 10px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 button:hover {
     background-color: #de1c42;
-    color: #f8e208;
 }
 
 #feedback {
-    margin-top: 20px;
+    margin-top: 15px;
     font-style: italic;
 }
