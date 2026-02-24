@@ -6,7 +6,7 @@ function checkCode() {
 
     if(input === secretCode) {
         feedback.textContent = "Correct"
-        window.location.href = "puzzles/puzzle1.html";
+            window.location.href = "puzzles/puzzle1.html";
     } else {
         feedback.textContent = "Incorrect";
     }
