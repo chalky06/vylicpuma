@@ -17,10 +17,11 @@ h1 {
 
 p {
     margin: 10px 0;
+    color: #f8e208
 }
 
 input[type="text"] {
-    background-color: #010001;
+    background-color: #85b09a;
     color: #f8e208;
     border: 1px solid #f8e208;
     font-family: "Courier New", monospace; /* pixelated terminal input font */
