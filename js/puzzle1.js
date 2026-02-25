@@ -1,78 +1,45 @@
-const gridContainer = document.getElementById("grid");
-const feedback = document.getElementById("feedback");
-
-// Define the correct 24x24 pattern
-// 1 = teal tile, 0 = empty
-const pattern = [
-    /* example placeholder for demonstration, replace with actual 24x24 CryptoPunk abstraction */
-    "000000000000000000000000",
-    "000000000000000000000000",
-    "000000000000000000000000",
-    "000000000000000000000000",
-    "000000000000000000000000",
-    "000000001111111100000000",
-    "000000011111111110000000",
-    "000000111111111110000000",
-    "001111111111111110000000",
-    "000111111111111110000000",
-    "000110111111111110000000",
-    "000101111111111110000000",
-    "000011111111111110000000",
-    "000001111111111110000000",
-    "000001111111111110000000",
-    "000000111111111110000000",
-    "000000111111111110000000",
-    "000000111111111110000000",
-    "000000111111111110000000",
-    "000000111111111110000000",
-    "000000111111111100000000",
-    "000000111111111000000000",
-    "000000111110000000000000",
-    "000000111110000000000000",
-];
-
-// Build the grid
-const tiles = [];
-for (let row = 0; row < 24; row++) {
-    for (let col = 0; col < 24; col++) {
-        const tile = document.createElement("div");
-        tile.classList.add("tile");
-        tile.dataset.row = row;
-        tile.dataset.col = col;
-
-        tile.addEventListener("click", () => {
-            tile.classList.toggle("active");
-        });
-
-        gridContainer.appendChild(tile);
-        tiles.push(tile);
-    }
+function decodePattern(encoded) {
+    return atob(encoded);
 }
 
-// Convert pattern string to array of booleans
-const patternArray = pattern.map(row => row.split("").map(Number));
+function gridToString() {
+    return tiles.map(t =>
+        t.classList.contains("active") ? "1" : "0"
+    ).join("");
+}
 
-// Check the user's drawing with tolerance
-document.getElementById("submitBtn").addEventListener("click", () => {
+function countMistakes(userStr, correctStr) {
     let mistakes = 0;
 
-    for (let row = 0; row < 24; row++) {
-        for (let col = 0; col < 24; col++) {
-            const index = row * 24 + col;
-            const userActive = tiles[index].classList.contains("active") ? 1 : 0;
-            const correct = patternArray[row][col];
-            if (userActive !== correct) mistakes++;
+    for (let i = 0; i < userStr.length; i++) {
+        if (userStr[i] !== correctStr[i]) {
+            mistakes++;
+            if (mistakes > 2) return mistakes; // early exit
         }
     }
 
+    return mistakes;
+}
+
+document.getElementById("submitBtn").addEventListener("click", () => {
+
+    const userString = gridToString();
+
+    const encodedPattern = "d02cad6d46c928da8a67d3c8eea492e1614925eb3259e042f753a2da0640ac05";
+    const correctString = decodePattern(encodedPattern);
+
+    const mistakes = countMistakes(userString, correctString);
+
     if (mistakes <= 2) {
-        feedback.textContent = "Correct! Proceed to the next level.";
+        localStorage.setItem(
+            "accessKey",
+            btoa("vylic-5822-alien")
+        );
+
+        feedback.textContent = "Correct";
         feedback.style.color = "#85b09a";
-        const token = btoa("vylic-5822-unlocked");
-        localStorage.setItem("accessKey", token);
-        window.location.href = "puzzle2.html";
     } else {
-        feedback.textContent = `Incorrect. Try again! Mistakes: ${mistakes}`;
+        feedback.textContent = "Incorrect";
         feedback.style.color = "#de1c42";
     }
 });
