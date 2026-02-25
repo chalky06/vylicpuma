@@ -37,6 +37,27 @@ body {
     background-color: #85b09a;   /* teal pattern */
 }
 
+.main-btn {
+    background-color: #188d45;
+    color: #f8e208;
+    border: 1px solid #f8e208;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    padding: 6px 14px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.main-btn:hover {
+    background-color: #de1c42;
+    color: #f8e208;
+}
+
+.button-row {
+    margin-top: 15px;
+}
+
 button:hover {
     background-color: #de1c42;
     color: #f8e208;
