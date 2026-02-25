@@ -6,20 +6,19 @@ const clearBtn = document.getElementById("clearBtn");
 
 let tiles = [];
 let isDragging = false;
-let drawMode = null; // "add" or "remove"
+let drawMode = null;
 
-// -------------------
-// 1. Build Grid
-// -------------------
+// ---------------------
+// Build Grid
+// ---------------------
 
 for (let i = 0; i < gridSize * gridSize; i++) {
     const tile = document.createElement("div");
     tile.classList.add("tile");
 
-    tile.addEventListener("mousedown", (e) => {
+    tile.addEventListener("mousedown", () => {
         isDragging = true;
 
-        // Decide if we are drawing or erasing
         if (tile.classList.contains("active")) {
             drawMode = "remove";
             tile.classList.remove("active");
@@ -34,7 +33,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
 
         if (drawMode === "add") {
             tile.classList.add("active");
-        } else if (drawMode === "remove") {
+        } else {
             tile.classList.remove("active");
         }
     });
@@ -43,63 +42,48 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     tiles.push(tile);
 }
 
-// Stop drag when mouse released anywhere
 document.addEventListener("mouseup", () => {
     isDragging = false;
     drawMode = null;
 });
 
-// -------------------
-// 2. Clear Button
-// -------------------
-
-const clearBtn = document.createElement("button");
-clearBtn.textContent = "Clear";
-clearBtn.style.marginLeft = "10px";
+// ---------------------
+// Clear Grid
+// ---------------------
 
 clearBtn.addEventListener("click", () => {
     tiles.forEach(tile => tile.classList.remove("active"));
     feedback.textContent = "";
 });
 
-submitBtn.after(clearBtn);
-
-// -------------------
-// 3. Pattern Logic
-// -------------------
+// ---------------------
+// Pattern Check (2 tolerance)
+// ---------------------
 
 function decodePattern(encoded) {
     return atob(encoded);
 }
 
 function gridToString() {
-    return tiles.map(t =>
-        t.classList.contains("active") ? "1" : "0"
+    return tiles.map(tile =>
+        tile.classList.contains("active") ? "1" : "0"
     ).join("");
 }
 
 function countMistakes(userStr, correctStr) {
     let mistakes = 0;
-
     for (let i = 0; i < userStr.length; i++) {
         if (userStr[i] !== correctStr[i]) {
             mistakes++;
             if (mistakes > 2) return mistakes;
         }
     }
-
     return mistakes;
 }
 
-// -------------------
-// 4. Submit
-// -------------------
-
 submitBtn.addEventListener("click", () => {
 
-    const userString = gridToString();
-
-    const encodedPattern = "MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMTExMTExMTAwMDAwMDAwMDAwMDAwMDExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAxMTExMTExMTExMTExMTEwMDAwMDAwMDAwMTExMTExMTExMTExMTEwMDAwMDAwMDAwMTEwMTExMTExMTExMTEwMDAwMDAwMDAwMTAxMTExMTExMTExMTEwMDAwMDAwMDAwMDExMTExMTExMTExMTEwMDAwMDAwMDAwMDAxMTExMTExMTExMTEwMDAwMDAwMDAwMDAxMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTEwMDAwMDAwMDAwMDAwMTExMTExMTExMTAwMDAwMDAwMDAwMDAwMTExMTExMTExMDAwMDAwMDAwMDAwMDAwMTExMTEwMDAwMDAwMDAwMDAwMDAwMDAwMTExMTEwMDAwMDAwMDAwMDAw"; 
+    const encodedPattern = "PASTE_YOUR_BASE64_PATTERN_HERE";
     const correctString = decodePattern(encodedPattern);
 
     if (!correctString || correctString.length !== 576) {
@@ -108,6 +92,7 @@ submitBtn.addEventListener("click", () => {
         return;
     }
 
+    const userString = gridToString();
     const mistakes = countMistakes(userString, correctString);
 
     if (mistakes <= 2) {
@@ -118,9 +103,4 @@ submitBtn.addEventListener("click", () => {
         feedback.textContent = "Incorrect";
         feedback.style.color = "#de1c42";
     }
-});
-
-clearBtn.addEventListener("click", () => {
-    tiles.forEach(tile => tile.classList.remove("active"));
-    feedback.textContent = "";
 });
