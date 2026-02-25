@@ -2,6 +2,7 @@ const gridSize = 24;
 const gridContainer = document.getElementById("grid");
 const feedback = document.getElementById("feedback");
 const submitBtn = document.getElementById("submitBtn");
+const clearBtn = document.getElementById("clearBtn");
 
 let tiles = [];
 let isDragging = false;
@@ -117,4 +118,9 @@ submitBtn.addEventListener("click", () => {
         feedback.textContent = "Incorrect";
         feedback.style.color = "#de1c42";
     }
+});
+
+clearBtn.addEventListener("click", () => {
+    tiles.forEach(tile => tile.classList.remove("active"));
+    feedback.textContent = "";
 });
